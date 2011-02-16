@@ -2,6 +2,7 @@
 # encoding=utf-8
 # maintainer: rgaudin
 
+import os
 import time
 from datetime import datetime
 
@@ -69,7 +70,7 @@ def scan(request, success_url=None, \
 
             context.update({'scan_path': leaf, \
                             'scan_thumb': 'thumb_'+leaf, \
-                            'scan_size': os.path.getsize(filename),
+                            'scan_size': os.path.getsize(filename)/1024,
                             'scan_ok': True})
 
     else:
