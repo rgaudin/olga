@@ -29,11 +29,9 @@
 
     <h2>Scanned Image</h2>
     <dl>
-    <dt>File Size</dt>
-    <dd>1.3 MB</dd>
     <dt>Download</dt>
-    <dd><a href="">JPEG Format</a></dd>
-    <dd><a href="">PDF Format</a></dd>
+    <dd><a href="{{SCANNED_URL}}{{ scan_path }}">JPEG Format</a> ({{ scan_size }}B)</dd>
+    <dd><a href="{{SCANNED_URL}}{{ scan_pdf }}">PDF Format</a></dd>
     <dt><input type="button" value="Print this page." /></dt>
     </dl>
 {% endif %}

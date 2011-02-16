@@ -24,8 +24,8 @@ body {
     border: 2px solid white;
 }
 
-a {
-    color: white;
+a, a:visited, a:link, a:hover, a:active {
+    color: gray;
 }
 
 #result * img {

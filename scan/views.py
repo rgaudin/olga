@@ -57,13 +57,20 @@ def scan(request, success_url=None, \
             scanner.set_option('mode', form.cleaned_data['mode'])
             scanner.set_option('resolution', form.cleaned_data['resolution'])
 
-            filename = scanner.scan(settings.SCANNED_ROOT + '/%s.jpg' % datetime.now().strftime('%s'))
+            filename = scanner.scan(settings.SCANNED_ROOT + '/%s.jpg' \
+                                    % datetime.now().strftime('%s'))
 
             # create thumbnail
             path, leaf = filename.rsplit('/', 1)
-            retcode = subprocess.call(['convert', filename, '-resize', '430x594', '-quality', '65', path + 'thumb_'+leaf])
+            retcode = subprocess.call(['convert', filename, \
+                                                  '-resize', '430x594', \
+                                                  '-quality', '65', \
+                                                  path + 'thumb_'+leaf])
 
-            context.update({'scan_path': leaf, 'scan_thumb': 'thumb_'+leaf, 'scan_ok': True})
+            context.update({'scan_path': leaf, \
+                            'scan_thumb': 'thumb_'+leaf, \
+                            'scan_size': os.path.getsize(filename),
+                            'scan_ok': True})
 
     else:
         form = form_cls()
@@ -72,4 +79,3 @@ def scan(request, success_url=None, \
     context.update(extra_context)
     context.update(csrf(request))
     return render_to_response(template_name, context)
-
