@@ -1,0 +1,33 @@
+body {
+    background-color: #333333;
+    color: #dedede;
+}
+
+#header {
+    border-bottom: 1px solid white;
+}
+
+#options {
+    float:left;
+    position: relative;
+    width: auto;
+    max-width: 430px;
+}
+
+#result {
+    float: left;
+    margin-left: 2em;
+    margin-top: 1em;
+    width: 430px;
+    height: 594px;
+    background-color: gray;
+    border: 2px solid white;
+}
+
+td, th {
+    text-align: left;
+}
+
+#footer {
+    clear: both;
+}

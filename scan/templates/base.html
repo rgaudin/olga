@@ -1,0 +1,11 @@
+<html>
+<head>
+<title>{% block title %}Remote Scanner{% endblock %}</title>
+<link rel="stylesheet" media="screen" type="text/css" href="{{ STATIC_URL }}style.css" />
+</head>
+<body>
+{% block body %}
+    {% block content %}
+    {% endblock %}
+{% endblock %}
+
