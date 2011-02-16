@@ -24,6 +24,14 @@ body {
     border: 2px solid white;
 }
 
+a {
+    color: white;
+}
+
+#result * img {
+    border: none;
+}
+
 td, th {
     text-align: left;
 }
